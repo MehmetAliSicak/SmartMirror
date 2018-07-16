@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.wear.widget.BoxInsetLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue"
+    android:padding="@dimen/box_inset_layout_padding"
+    tools:deviceIds="wear">
+
+
+    <LinearLayout
+        android:id="@+id/llStart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <TimePicker
+            android:id="@+id/timePicker"
+            android:layout_width="wrap_content"
+            android:layout_height="99dp"
+            android:layout_gravity="center" />
+
+        <Button
+            android:id="@+id/btnAddAct"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Next"
+            android:textAllCaps="false" />
+
+    </LinearLayout>
+
+
+</android.support.wear.widget.BoxInsetLayout>
+

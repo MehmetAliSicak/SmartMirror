@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.mas.smartmirror">
+    <!--İhtiyaç duyulan izinleri ekledik.
+     ACCESS_WIFI_STATE
+     INTERNET
+     SET_TIME-->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="com.google.android.things.permission.SET_TIME"/>
+    <application android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen"
+        android:screenOrientation="portrait">
+        <uses-library android:name="com.google.android.things" />
+
+        <!--MainActivity isimli etkinlik, Raspberry Pi 3 açıldığında veya Android Things başladıktan sonra
+           otomatik olarak kullanıcıya gösterilecektir. -->
+        <activity android:name=".MainActivity">
+
+            <!--Bu intent filter ile MainActivity uygulamanın ana giriş noktası yapılır. -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+
+            <!--Bu intent filter ile Android Things açıldıktan hemen sonra MainActivity etkinliğinin
+             otomatik olarak başlaması sağlanır.-->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.HOME"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

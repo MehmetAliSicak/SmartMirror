@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#5a0456</color>
+    <color name="colorPrimaryDark">#33003d</color>
+    <color name="colorAccent">#720e62</color>
+
+    <color name="saveBtnTextColor">#ffffff</color>
+
+    <!--Red
+    <color name="colorPrimary">#8a0037</color>
+    <color name="colorPrimaryDark">#54002a</color>
+    <color name="colorAccent">#ac003d</color>
+    -->
+
+    <!--Green -->
+    <!--
+    <color name="colorPrimary">#117234</color>
+    <color name="colorPrimaryDark">#005422</color>
+    <color name="colorAccent">#25954a</color>
+    -->
+
+    <!--Purple -My Favorite:) -->
+    <!--
+    <color name="colorPrimary">#5a0456</color>
+    <color name="colorPrimaryDark">#33003d</color>
+    <color name="colorAccent">#720e62</color>
+    -->
+
+    <!--Orange-->
+    <!--
+    <color name="colorPrimary">#ee6002</color>
+    <color name="colorPrimaryDark">#e54304</color>
+    <color name="colorAccent">#f47100</color>
+    -->
+</resources>

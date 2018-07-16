@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--android.support.design.widget.CoordinatorLayout: isminden de
+anlaşılacağı üzere, bu düzenin temel amacı, içerisinde bulunan
+görünümleri, koordine etmesidir. Yani; görünümler arasında koordineli
+bir geçiş yapılmasını sağlamasıdır. Bu düzeni bir iskelet
+yapısı olarak düşünebilirsiniz. Yapısı aşağıdaki gibidir.
+<CoordinatorLayout>
+<AppBarLayout/>
+<ScrollView/>
+<FloatingActionButton/>
+</CoordinatorLayout>
+android:fitsSystemWindows=”true” : bu özellik ile düzenimiz
+sistem penceresini tamamen doldurur(status bar yani,
+durum çubuğu gibi alanları da kapatır. Bu değişimi
+görmek için API 21 olan bir cihazda deneyiniz.)-->
+
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <!--AppBarLayout: LinearLayout düzenine benzeyen
+    ve görünümleri dikey olarak hizalayan bir
+    düzendir. İçerik kaydırıldığı anda, belirli
+    bazı parametrelerle görünümleri yönetebilir.-->
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:fitsSystemWindows="true"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <!--CollapsingToolbarLayout: Toolbar nesnesini içine
+        alan bir düzendir. İçerik yukarı doğru hareket ettirildiği
+        zaman içinde bulunan ImageView kontrolünü gizler ve
+        ToolBar nesnesini başlık olarak ayarlar. İçerik yukarı
+        sürüklendiği zaman, ImageView kontrolünün gizlenmesi için
+        app:contentScrim=”?attr/colorPrimary” özelliği eklenmelidir.
+        layout_scrollFlags: Bu özellik aşağıdaki değerleri alabilir.
+        scroll: içerik yukarı doğru sürüklendiğinde AppBar
+        tamamen gizlenir.
+        exitUntilCollapsed: scroll ile kullanıldığında,
+        resim gizlenir ve toolbar başlık olarak ayarlanır.-->
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/toolbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:contentScrim="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <!--Resim göstermek isterseniz.-->
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/smart_mirror"
+                android:scaleType="centerCrop"
+                android:visibility="invisible"
+                app:layout_collapseMode="parallax" />
+
+            <!--Toolbar: AppBar Eklemek için kullanılır.
+            Burada en önemli özellik
+            app:layout_collapseMode=”pin” özelliğidir.
+            Eğer bu ayarlamayı yapmazsak,
+            AppBar yukarı sürüklendiğinde, menü simgesi gizlenir.-->
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="wrap_content"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/AppTheme.PopupOverlay" />
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
+
+    <!--NestedScrollView: ScrollView kontrolünün eksiklerini
+    gideren daha kullanışlı ve esnek bir scroll kontrolüdür.
+    Özellikle bu tür uygulamalar için çok kullanışlıdır.
+    Aradaki farkı daha iyi anlamak için android.support.v4.widget.NestedScrollView
+    ifadesini silip ScrollView yazıp, uygulamanızı çalıştırınız.
+    Diğer bir kullanım sebebi, tek bir ekranda iki adet ScrollView
+    kullanılmaz. Fakat yine de ihtiyaç olursa bu kontrol ScrollView
+    içerisinde oluşturulabilir. ScrollView ile benzerliği,
+    içerisinde tek bir ana kontrolün olmasına izin vermesidir.
+    layout_behavior: Verilen değer ile bu özellik eklenmediği
+    zaman, içerik uygulamanın en tepesinde gösterilir.-->
+    <android.support.v4.widget.NestedScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!--Firebase ortamından veriler yüklenene
+             kadar kullanıcıya gösterilir-->
+            <ProgressBar
+                android:id="@+id/pbLoading"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <!--Faaliyetleri listeleyeceğimiz kontrol -->
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/my_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                android:scrollbars="vertical" />
+
+        </LinearLayout>
+
+
+    </android.support.v4.widget.NestedScrollView>
+
+    <!-- FloatingActionButton: Yüzen eylem butonu olarak bilinir.
+    Bu menüde öncelikli işlemler bulunur. Bu buton her zaman
+    için ekranda gösterilmek için tasarlandığı için
+    yüzen buton olarak isimlendirilir. Buradaki kullanım
+    amacı SaveActivity etkinlğini başlatarak faaliyet kaydını
+    yapmayı sağlamaktır.-->
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="25dp"
+        android:src="@drawable/ic_add"/>
+</android.support.design.widget.CoordinatorLayout>

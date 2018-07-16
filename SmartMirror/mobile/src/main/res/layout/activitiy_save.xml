@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:padding="8dp"
+    tools:context="com.mas.smartmirror.SaveActivity">
+
+    <!--Kullanıcının saat seçmesini sağlayan buton.
+    Buna tıkladığımız zaman TimePickerFragment fragment
+    bileşeni kullanıcıya gösterilir. Kullanıcı buradan saat
+    seçebilir.-->
+    <ImageButton
+        android:id="@+id/imgTimePicker"
+        android:layout_width="@dimen/ic_dimen"
+        android:layout_height="@dimen/ic_dimen"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/etDescription"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/ic_alarm_black_24dp"
+        android:text="@string/activity_save_image_button_time" />
+
+    <!--Kullanıcının tarih seçmesini sağlayan buton.
+    Buna tıkladığımız zaman DatePickerFragment fragment
+    bileşeni kullanıcıya gösterilir. Kullanıcı buradan tarih
+    seçebilir.-->
+    <ImageButton
+        android:id="@+id/imgDatePicker"
+        android:layout_width="@dimen/ic_dimen"
+        android:layout_height="@dimen/ic_dimen"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/imgTimePicker"
+        android:layout_marginEnd="117dp"
+        android:layout_marginRight="117dp"
+        android:background="@drawable/ic_date_range_black_24dp"
+        android:text="@string/activity_save_image_button_date" />
+
+    <!--Bu butona basıldığı zaman led yanar veya led_status ifadesine true değeri atanır-->
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="match_parent"
+        android:background="@color/colorAccent"
+        android:textColor="@color/saveBtnTextColor"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/tvTime"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/activity_save_btn_save" />
+
+    <!--Faaliyet için başlık girmemizi sağlayan kontrol -->
+    <EditText
+        android:id="@+id/etTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/edittext_shape"
+        android:ems="10"
+        android:fontFamily="sans-serif-condensed"
+        android:hint="@string/activity_save_title"
+        android:inputType="textPersonName"
+        android:textColor="#aa001c" />
+
+    <!--Faaliyet için açıklama girmemizi sağlayan kontrol -->
+    <EditText
+        android:id="@+id/etDescription"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/etTitle"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/edittext_shape"
+        android:ems="10"
+        android:fontFamily="sans-serif-condensed"
+        android:gravity="left|top"
+        android:hint="@string/activity_save_description"
+        android:inputType="textMultiLine"
+        android:textAlignment="gravity"
+        android:textColor="#aa001c"
+        android:textDirection="firstStrong" />
+
+    <!--Faaliyet için seçilen saat bilgisi buraya yazılır -->
+    <TextView
+        android:id="@+id/tvTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/imgTimePicker"
+        android:layout_toEndOf="@+id/imgTimePicker"
+        android:layout_toRightOf="@+id/imgTimePicker"
+        android:text="@string/activity_save_image_button_time"
+        android:textColor="@color/colorAccent"
+        android:textSize="15sp" />
+
+    <!--Faaliyet için seçilen tarih bilgisi buraya yazılır -->
+    <TextView
+        android:id="@+id/tvDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tvTime"
+        android:layout_alignBottom="@+id/tvTime"
+        android:layout_alignLeft="@+id/imgDatePicker"
+        android:layout_alignStart="@+id/imgDatePicker"
+        android:layout_marginLeft="37dp"
+        android:layout_marginStart="37dp"
+        android:text="@string/activity_save_image_button_date"
+        android:textColor="@color/colorAccent"
+        android:textSize="15sp" />
+
+</RelativeLayout>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:background="@android:color/black">
+
+    <!--Şehir ve hava durumu -->
+    <TextView
+        android:id="@+id/tvWeather"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="59dp"
+        android:rotation="-90"
+        android:text="Besni 11°C"
+        android:textColor="#fff"
+        android:textSize="25sp" />
+
+    <!--OpenWeatherMap'ten alınan hava durumu simgesi -->
+    <ImageView
+        android:id="@+id/ivWeather"
+        android:layout_width="90dip"
+        android:layout_height="90dip"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="35dp"
+        android:rotation="-90"
+        android:src="@drawable/common_google_signin_btn_icon_dark" />
+
+    <!--Saat, tarih ve gün bilgisini gösterecek kontrol -->
+    <TextView
+        android:id="@+id/tvTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tvWeather"
+        android:layout_alignBottom="@+id/tvWeather"
+        android:layout_marginStart="19dp"
+        android:layout_toEndOf="@+id/ivWeather"
+        android:gravity="right"
+        android:rotation="-90"
+        android:text="10:00 am"
+        android:textColor="#fff"
+        android:textSize="25sp" />
+
+    <!--Gündelik hoş mesajları veya o günkü faaliyetleri kullanıcıya gösterecek kontrol -->
+    <TextView
+        android:id="@+id/tvMessage"
+        android:layout_width="250dp"
+        android:layout_height="400dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:rotation="-90"
+        android:singleLine="false"
+        android:text="TextView"
+        android:textColor="#fff"
+        android:textSize="30sp" />
+
+    <!--Raspberry Pi 3 herhangi bir ağa bağlı olmadığında ekranda sadece bu kontrol gösterilir.
+     Başlangıçta kullanıcıya gösterilmez.-->
+    <TextView
+        android:id="@+id/tvWifi"
+        android:layout_width="250dp"
+        android:layout_height="400dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:rotation="-90"
+        android:visibility="invisible"
+        android:singleLine="false"
+        android:text="WiFi bulunamadı"
+        android:textColor="#fff"
+        android:textSize="30sp" />
+
+    <!--Kayıtlı tüm faaliyetlerin listelendiği kontrol -->
+    <TextView
+        android:id="@+id/tvActivities"
+        android:layout_width="250dp"
+        android:layout_height="400dp"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:rotation="-90"
+        android:singleLine="false"
+        android:text="Araştırma"
+        android:textSize="25sp" />
+
+
+</RelativeLayout>

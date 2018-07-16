@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+
+<title>Smart Mirror</title>
+
+<!--style.css dosyamızı ekledik. Stil ile ilgili işlemleri html kodlarımıznda yarı olarak ele aldık. -->
+<link rel="stylesheet" type="text/css" href="style.css">
+
+<!--Bu satır firebase ile ilgili işlemlerde öncelikle eklenmelidir. -->
+<script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
+
+<!--Firebase veritabanı işlemleri için aşağıdaki satırı ayrıca eklemek gerekiyor. -->
+<script src="https://www.gstatic.com/firebasejs/4.13.0/firebase-database.js"></script>
+
+<script src="index.js"></script>
+
+</head>
+
+<body >
+
+<div class="mainDiv" align="center">
+	
+	<h2 align="center" id="heading">Registration Form</h2>
+	
+	<!--Faaliyet kayıt işlemini yapmayı sağlayan tablomuz. -->
+	<table border="0" align="center" width="700px">
+		
+			<tr>
+			    <!--Faaliyet için tarih bilgisi -->
+				<td><label for="fdate">Date</label></td>
+				<td><input type="date" name="bday" ></td>
+			</tr>
+			
+			<tr>
+				<!--Faaliyet için zaman bilgisi -->
+				<td><label for="lname">Time</label></td>
+				<td><input type="time" name="btime" ></td>
+			</tr>
+			
+			<tr>
+				<!--Faaliyet için başlık bilgisi -->
+				<td><label for="ltitle">Title</label></td>
+				<td><input type="text" name ="title" placeholder="Title.."></td>
+			</tr>
+			
+			<tr>
+				<!--Faaliyet için açıklama bilgisi -->
+				<td><label for="ldesc">Description</label></td>
+				<td><textarea id="mainText" name="note" placeholder="Description..."></textarea></td>
+			</tr>
+			
+			<tr>
+				<td colspan="2">
+					<button id="submitBtn" onClick="saveData()">Save Your Activity </button>
+				</td>
+			</tr>				
+	</table>
+	
+	<!--Firebase ortamında kayıtlı olan etknilikleri listeleyeceğimiz tablo -->
+	<table border="1" align="center" width="700px" id="notelist">
+		<caption style="margin-bottom: 20px">Registered Activities</caption>
+			<tr>
+				<!--Kayıtlı olan verileri tarih, saat, başlık, açıklama ve silme sütunlarında göstereceğiz. -->
+				<th>Date</th>
+				<th>Time</th>
+				<th>Title</th>
+				<th>Description</th>
+				<th>Completed</th>
+			</tr>	
+			
+		<!--Kayıtlı olan faaliyetlerin tümü tbody etiketi altında listelenecektir. -->		
+		<tbody id="table_body"></tbody>		
+	</table>
+	<p>Created by <a href="https://memetalisicak.com/" target="new" style="color: blue">Mehmet Ali SICAK</a></p>
+	
+</div>
+
+<a href="https://memetalisicak.com/" target="new">
+
+<div class="footer">
+ 
+  <b>Visit My Blog</b>
+  
+</div>
+
+</a>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

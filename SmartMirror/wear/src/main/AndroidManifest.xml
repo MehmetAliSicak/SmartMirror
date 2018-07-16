@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.mas.smartmirror">
+
+    <uses-feature android:name="android.hardware.type.watch" />
+
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@android:style/Theme.DeviceDefault">
+        <uses-library
+            android:name="com.google.android.wearable"
+            android:required="true" />
+
+        <meta-data
+            android:name="com.google.android.wearable.standalone"
+            android:value="true" />
+
+        <activity
+            android:name=".NotesListActivity"
+            android:label="@string/app_name" />
+
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/title_activity_main">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!--
+        <service android:name=”.ListenerService”>
+            <intent-flter>
+                <action android:name=”com.google.android.gms.wearable.DATA_CHANGED” />
+            </intent-flter>
+        </service>
+        Servisin mutlaka yukarıdaki gibi bildirilmesi gerekiyor.
+        Bu satırlar ile ListenerService servisi, Wearable Data Layer'da
+        meydan gelecek olan Data yani veri değişimi durumlarınaü
+        duyarlı hale gelecektir.-->
+        <service android:name=".ListenerService">
+            <intent-filter>
+                <action android:name="com.google.android.gms.wearable.DATA_CHANGED" />
+
+                <!--Bu servis için bir tane <data> etiketi tanımladık.
+                Burada path bilgisinin /wearable_data olarak belirlendiğine
+                dikkat ediniz. Eğer bunu yapmazsanız Data Change olaylarında
+                bu path ile çalışamayız-->
+                <data
+                    android:host="*"
+                    android:path="/wearable_data"
+                    android:scheme="wear" />
+            </intent-filter>
+        </service>
+    </application>
+
+</manifest>

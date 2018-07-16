@@ -1,0 +1,99 @@
+@charset "utf-8";
+/* CSS Document */
+/*Body etiketi için font türü ve arkaplan rengini belirledik.*/
+body{
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	background-color: #720e62;
+}
+
+/*mainDiv için genişlik değerini %55 olarak ayarladık ve div etiketini margin ile sayfaya ortaladık.*/
+.mainDiv{
+	width: 55%;
+	margin: 0 auto;
+}
+
+/*Kayıtlı olan not yani faaliyetleri listeleyeceğimiz tablo için stil özelliklerini tanımladık.*/
+#notelist {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#notelist td, #notelist th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#notelist tr:nth-child(even){background-color: #f2f2f2;}
+
+#notelist tr:hover {background-color: #ddd;}
+
+#notelist th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #720e62;
+    color: white;
+}
+
+/*Herbir label için yazı boyutunu 18px olarak ayarladık.*/
+label{
+	font-size: 18px;
+}
+
+/*input[] ifadesi ile veri girişi yapacağımız alanların stil özelliklerini belirledik.*/
+input[type=text],input[type=date], input[type=time],textarea {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/*Kayıt işlemini yapan buton*/
+#submitBtn {
+    width: 30%;
+	margin: 0 auto;
+	float: right;
+    background-color: #720e62;
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/*Kayıt işlemini yapan butonun üstüne farenin imleci geldiğinde arkaplan rengi değişir.*/
+#submitBtn:hover {
+    background-color: #45a049;
+}
+
+/*Tüm div etiketleri için ortak bir stil tanımladık.*/
+div {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+/*footer isteğe bağlı. Buraya kendimle ilgili bilgilere erişim sağlayan bir link ekledim.*/
+.footer {
+   position: fixed;
+   right: 0;
+   bottom: 0;
+   width: 10%;
+   height: 20px;
+	margin-bottom: 5px;
+   background-color: darkred;
+   color: white;
+   text-align: center;
+}
+
+a{
+	text-decoration: none;
+	color: white;
+}
+.footer:hover{
+	background-color: #45a049;
+	
+}

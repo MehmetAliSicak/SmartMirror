@@ -1,0 +1,17 @@
+<resources>
+    <!--App-->
+    <string name="app_name">Smart Mirror</string>
+    <string name="title_activity_main">Smart Mirror</string>
+    <string name="title_activity_save">Kayıt Formu</string>
+
+    <!--SaveActivity-->
+    <string name="activity_save_image_button_time">Saat</string>
+    <string name="activity_save_image_button_date">Tarih</string>
+    <string name="activity_save_btn_save">Kaydet</string>
+    <string name="activity_save_title">Başlık</string>
+    <string name="activity_save_description">Açıklama</string>
+
+
+    <!--Settings-->
+    <string name="action_settings">Ayarlar</string>
+</resources>

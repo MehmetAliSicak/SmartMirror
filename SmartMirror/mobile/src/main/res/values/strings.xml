@@ -1,0 +1,17 @@
+<resources>
+    <!--App-->
+    <string name="app_name">Smart Mirror</string>
+    <string name="title_activity_main">Smart Mirror</string>
+    <string name="title_activity_save">Registration Form</string>
+
+    <!--SaveActivity-->
+    <string name="activity_save_image_button_time">Time</string>
+    <string name="activity_save_image_button_date">Date</string>
+    <string name="activity_save_btn_save">Save</string>
+    <string name="activity_save_title">Title</string>
+    <string name="activity_save_description">Description</string>
+
+
+    <!--Settings-->
+    <string name="action_settings">Settings</string>
+</resources>

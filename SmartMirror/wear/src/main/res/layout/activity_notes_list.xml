@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:deviceIds="wear"
+    android:orientation="vertical">
+
+    <!--Başlık etiketi -->
+    <TextView
+        android:id="@+id/myNotes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/title_notes_list"
+        android:padding="25dp"
+        android:textSize="16sp"
+        android:background="@color/color_red"
+        android:textColor="@color/white"
+        android:textStyle="bold"/>
+
+    <!--Gelen tüm faaliyetlerin listelendiği
+    kontrol-->
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"/>
+
+</LinearLayout>
+
